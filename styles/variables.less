@@ -1,0 +1,24 @@
+// Use @base-url when specifying relative paths to images, fonts, 
+// and other resources.
+@base-url: '..';
+
+// @background-color holds the default background color for 
+// your pop. You can specify it here, but Populr will override 
+// this value once the user selects a background image for their 
+// pop. Populr automatically calculates the average color of any 
+// background image selected by the user, and stores that average 
+// color in @background-color.
+@background-color: #ccc;
+
+// The following variables can be edited by Populr's users
+// via dropdown menus in the pop editor.
+
+// @headline-font-family is changed with the Font dropdown 
+@headline-font-family: Arial, serif;
+
+// @accent-color is changed with the color picker in the Style 
+// dropdown. The color picker will only be available to your 
+// users if you set it up as one of your color palettes. See the 
+// Populr themer documentation for details on how this works:
+// http://developers.populr.me/theming/
+@accent-color: #33f;
