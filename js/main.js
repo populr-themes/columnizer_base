@@ -1,4 +1,3 @@
-/*
 var fixColumnHeights = function() {
   $('.columnizer-row').each(function(){
     var maxHeight = 0;
@@ -19,4 +18,3 @@ $(document).on('pop-initialized', function(){
     $(this).find('.asset-inner').height('auto');
   });
 });
-*/
