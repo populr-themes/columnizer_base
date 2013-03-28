@@ -1,4 +1,4 @@
-columnizer_skeleton
+Big Machine
 ===================
 
-Simple columnizer theme to use as a starting point
+Theme for Big Machine's Outnumber Hunger campaign
