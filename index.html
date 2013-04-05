@@ -27,7 +27,7 @@
 
     {{{title}}}
 
-    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="V-1|V-3|V-1,V-3|V-1,V-1,V-3|T-1|T-1,T-1|I-1|I-3|I-1,I-3|D-3|D-1,D-3|E-1|E-2|E-1,E-2"}}
+    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
 
       {{#asset "text" size="1"}}
         {{{title}}}
@@ -46,7 +46,7 @@
 
       {{#asset "imagegroup" size="1"}}
         <div class="content">
-          {{{imageslider images width="878" height="439"}}}
+          {{{imageslider images width="880" height="550"}}}
         </div>
         {{{title}}}
         {{{description}}}
@@ -54,7 +54,7 @@
  
       {{#asset "imagegroup" size="2"}}
         <div class="content">
-          {{{imageslider images width="429" height="214"}}}
+          {{{imageslider images width="431" height="214"}}}
         </div>
         {{{title}}}
         {{{description}}}
@@ -62,7 +62,7 @@
   
       {{#asset "imagegroup" size="3"}}
         <div class="content">
-          {{{imageslider images width="280" height="210"}}}
+          {{{imageslider images width="282" height="212"}}}
         </div>
         {{{title}}}
         {{{description}}}
@@ -70,7 +70,7 @@
   
       {{#asset "videogroup" size="1"}}
         <div class="content">
-          {{{videoplayer videos width="878" height="439" resolution="large"}}}
+          {{{videoplayer videos width="880" height="550" resolution="large"}}}
         </div>
         {{{title}}}
         {{{description}}}
@@ -78,7 +78,7 @@
 
       {{#asset "videogroup" size="2"}}
         <div class="content">
-          {{{videoplayer videos width="429" height="214" resolution="medium"}}}
+          {{{videoplayer videos width="431" height="214" resolution="medium"}}}
         </div>
         {{{title}}}
         {{{description}}}
@@ -86,7 +86,7 @@
 
       {{#asset "videogroup" size="3"}}
         <div class="content">
-          {{{videoplayer videos width="280" height="210" resolution="small"}}}
+          {{{videoplayer videos width="282" height="212" resolution="small"}}}
         </div>
         {{{title}}}
         {{{description}}}
@@ -95,7 +95,7 @@
       {{#asset "documentgroup" size="1"}}
         {{{title}}}
         {{{description}}}
-        <ul>
+        <ul class="documents">
           {{#documents}}
             <li><a href="{{original_url}}">{{title}}</a></li>
           {{/documents}}
@@ -105,7 +105,7 @@
       {{#asset "documentgroup" size="2"}}
         {{{title}}}
         {{{description}}}
-        <ul>
+        <ul class="documents">
           {{#documents}}
             <li><a href="{{original_url}}">{{title}}</a></li>
           {{/documents}}
@@ -115,14 +115,14 @@
       {{#asset "documentgroup" size="3"}}
         {{{title}}}
         {{{description}}}
-        <ul>
+        <ul class="documents">
           {{#documents}}
             <li><a href="{{original_url}}">{{title}}</a></li>
           {{/documents}}
         </ul>
       {{/asset}}
  
-      {{#asset "embedgroup" size="1" width="780"}}
+      {{#asset "embedgroup" size="1" width="880"}}
         <div class="content">
           {{#embeds}}
             <div class="embed">{{{html}}}</div>
@@ -132,7 +132,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="2" width="430"}}
+      {{#asset "embedgroup" size="2" width="431"}}
         <div class="content">
           {{#embeds}}
             <div class="embed">{{{html}}}</div>
