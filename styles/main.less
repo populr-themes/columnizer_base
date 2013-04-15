@@ -60,12 +60,7 @@
 }
 
 // Content wrapper
-#main-content {
-  width: 880px;
-  margin: 40px 0;
-  padding: 40px;
-  background: #EEE;
-}
+#main-content { margin: 40px auto; }
 
 // Pop title
 #pop-title {
@@ -75,28 +70,26 @@
 }
 
 // Columnizer rows & columns
-.columnizer-row { margin: 40px 0; }
+.columnizer-row {
+  width: 960px;
+  margin: 30px auto;
+}
 
 // Assets
-.asset { background-color: #ccc; }
-
-.asset-inner { .clearfix; }
-
 .asset-title {
   margin: 10px 0;
   padding: 0 10px;
 }
-.asset-type-text .asset-title, .asset-type-documentgroup .asset-title {
-  padding-top: 10px;
-}
 
 .description, .body {
+  margin: 10px 0;
+  padding: 0 10px;
   ul, ol { margin: .5em 0 .5em 2em; }
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
-  margin: 10px 0;
-  padding: 0 10px;
 }
+
+.content { margin: 10px 0; }
 
 // Video assets
 .asset-type-videogroup .video-js { margin-bottom: 15px; }
@@ -116,7 +109,10 @@
 .asset-type-videogroup video { display: block; }
 .asset-type-videogroup .mejs-container video { margin-left: 0; }
 
-.documents { margin: 10px; }
+.documents {
+  margin: 10px;
+  li { margin-bottom: .5em; }
+}
 
 // Clearfix
 .clearfix:after {
@@ -131,10 +127,15 @@
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 // Populr image slider
-// #populr > #image-slider-themes > .basic();
+#populr > #image-slider-themes > .basic();
 
-// Populr mobile reset
-// @media all and (max-width: 960px) {
-//   #populr > .mobile-reset();
-// }
+///////////////////////////////////////////////////////
+/* MOBILE
+The Populr mobile reset will handle some of the basics of 
+mobilizing your theme, such as stacking all of the assets 
+vertically. However, you'll have to fine tune the styling 
+to make your theme look really good on mobile devices. */
+@media all and (max-width: 960px) {
+  #populr > .mobile-reset();
+}
 
