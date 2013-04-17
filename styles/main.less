@@ -12,13 +12,11 @@
 // @headline-font-family is defined in variables.less
 @headline-font-size: 24px;
 @headline-line-height: 1.2;
-@headline-font-weight: 400;
 
 .headline-font() {
   font-family: @headline-font-family;
   font-size: @headline-font-size;
   line-height: @headline-line-height;
-  font-weight: @headline-font-weight;
 }
 
 .asset-title { .headline-font(); }
@@ -27,7 +25,6 @@
 @body-font-family: Arial, sans-serif;
 @body-font-size: 14px;
 @body-line-height: 1.5;
-@body-font-weight: 400;
 
 .body-font() {
   font-family: @body-font-family;
@@ -47,7 +44,6 @@
 /* STRUCTURE */
 
 #pop {
-  width: 960px;
   margin: 0 auto;
   color: @text-color;
   i, em { font-style: italic; }
@@ -56,6 +52,7 @@
     color: @link-color;
     text-decoration: none;
     &:hover { text-decoration: underline; }
+    &:active { color: lighten(@link-color, 20%); }
   }
 }
 
@@ -64,8 +61,11 @@
 
 // Pop title
 #pop-title {
+  width: 960px;
+  margin: 40px auto;
   .headline-font();
-  font-size: 60px;
+  font-size: 54px;
+  line-height: 1.1;
   text-align: center;
 }
 
@@ -76,20 +76,34 @@
 }
 
 // Assets
-.asset-title {
-  margin: 10px 0;
-  padding: 0 10px;
-}
+.asset-title { margin: 10px 0; }
 
 .description, .body {
   margin: 10px 0;
-  padding: 0 10px;
-  ul, ol { margin: .5em 0 .5em 2em; }
+  ul, ol {
+    margin: .5em 0;
+    list-style-position: inside;
+  }
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
 }
 
 .content { margin: 10px 0; }
+
+// Text assets
+.asset-type-text.asset-size-1, .asset-type-documentgroup.asset-size-1 {
+  .asset-title {
+    font-size: 36px;
+    text-align: center;
+  }
+  .description, .body, p, li {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+// Image assets
+#populr > #image-slider-themes > .basic();
 
 // Video assets
 .asset-type-videogroup .video-js { margin-bottom: 15px; }
@@ -110,7 +124,7 @@
 .asset-type-videogroup .mejs-container video { margin-left: 0; }
 
 .documents {
-  margin: 10px;
+  margin: 10px auto;
   li { margin-bottom: .5em; }
 }
 
@@ -126,9 +140,6 @@
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
-// Populr image slider
-#populr > #image-slider-themes > .basic();
-
 ///////////////////////////////////////////////////////
 /* MOBILE
 The Populr mobile reset will handle some of the basics of 
@@ -137,5 +148,32 @@ vertically. However, you'll have to fine tune the styling
 to make your theme look really good on mobile devices. */
 @media all and (max-width: 960px) {
   #populr > .mobile-reset();
+
+  #pop-title {
+    width: auto !important;
+    padding: 20px !important;
+  }
+
+  .columnizer-row {
+    width: auto !important;
+    margin: 20px auto !important;
+    padding: 0 20px !important;
+  }
+
+  .asset-title {
+    font-size: 24px !important;
+    text-align: left !important;
+  }
+
+  .description, .body, p, li {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #pop-title { font-size: 32px !important; }
+
+  .asset-title { font-size: 20px !important; }
 }
 
