@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html itemscope>
 <head>
   <meta charset="utf-8">
 
   <!-- Name of your theme -->
   <title>Columnizer Base</title>
 
-<!--
-  <palette class="palette-default" name="Default" preview="#ffffff,#222222">
--->
+  <!--
+    Color palettes
+  -->
+  <!--
+    <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000">
+    <meta itemprop="palette" content="palette-custom" data-preview="custom">
+  -->
+
+  <!--
+    Dummy content
+  -->
+  <!--
+    <meta itemprop="dummyImageCategory" content="All">
+    <meta itemprop="dummyContentLength" content="medium">
+  -->
+
+  <!-- 
+    Default background images
+    must set actual image width & height
+    postitions: c, nw, ne, sw, se
+    style: fill, tile, fixed
+    average color can be computed by opening an image in photoshop and shrinking it down to 1 pixel
+  -->
+  <!--
+    <meta itemprop="defaultBackground" content="/images/background.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#665b42">
+  -->
 
   <!-- Add any styles your theme requires here -->
   <link rel="stylesheet/less" type="text/css" href="/styles/main.less">

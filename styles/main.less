@@ -33,12 +33,12 @@
   line-height: @body-line-height;
 }
 
-// .description, .description p, .description li, .content, .content p, .content li, .body, .body p, .body li {
-.description, .content, .body, p, li {
+.description, .content, .body {
   .body-font();
+  p, li { .body-font(); }
 }
 
-/* END TYPOGRAPHY */
+/* END TYPOGRAPHY DEFAULTS */
 
 
 /* STRUCTURE */
