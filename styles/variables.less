@@ -1,8 +1,10 @@
 // Use this statement to import Google Web Fonts
 // @import '//fonts.googleapis.com/css?family=Open+Sans:300,700spo&.css';
 
-// Theme version values are 0 and 1
-@populr-theme-version: 1;
+// When @populr-theme-version is set to 0, the theme rendering engine
+// will use Populr's legacy grid. If you would like to define your own 
+// grid, set @populr-theme-version to 1.
+@populr-theme-version: 0;
 
 // Use @base-url when specifying relative paths to images, fonts, 
 // and other resources.
@@ -20,11 +22,11 @@
 // via dropdown menus in the pop editor.
 
 // @headline-font-family is changed with the Font dropdown 
-@headline-font-family: Arial, serif;
+@headline-font-family: Georgia, serif;
 
 // @accent-color is changed with the color picker in the Style 
 // dropdown. The color picker will only be available to your 
 // users if you set it up as one of your color palettes. See the 
 // Populr themer documentation for details on how this works:
 // http://developers.populr.me/theming/
-@accent-color: #33f;
+@custom-color: #33f;
