@@ -14,28 +14,27 @@
 @headline-font-size: 24px;
 @headline-line-height: 1.2;
 
-.headline-font() {
+.headline-text() {
   font-family: @headline-font-family;
   font-size: @headline-font-size;
   line-height: @headline-line-height;
 }
 
-.asset-title { .headline-font(); }
+.pop-title-text() {
+  font-family: @headline-font-family;
+  font-size: 54px;
+  line-height: 1.1;
+}
 
 // Body text defaults
 @body-font-family: Arial, sans-serif;
 @body-font-size: 14px;
 @body-line-height: 1.5;
 
-.body-font() {
+.body-text() {
   font-family: @body-font-family;
   font-size: @body-font-size;
   line-height: @body-line-height;
-}
-
-.description, .content, .body {
-  .body-font();
-  p, li { .body-font(); }
 }
 
 /* END TYPOGRAPHY DEFAULTS */
@@ -61,29 +60,30 @@
 
 // Pop title
 #pop-title {
-  width: 960px;
-  margin: 40px auto;
+  .pop-title-text();
+  p { .pop-title-text(); }
   text-align: center;
-  .headline-font();
-  font-size: 54px;
-  line-height: 1.1;
-  p {
-    .headline-font();
-    font-size: 54px;
-    line-height: 1.1;
-  }
 }
 
 // Columnizer rows & columns
 .columnizer-row {
-  width: 960px;
+  max-width: 960px;
   margin: 30px auto;
+  padding: 10px;
 }
 
 // Assets
-.asset-title { margin: 10px 0; }
+.asset-title {
+  .headline-text();
+  p { .headline-text(); }
+
+  margin: 10px 0;
+}
 
 .description, .body {
+  .body-text();
+  p, li { .body-text(); }
+
   margin: 10px 0;
   ul, ol {
     margin: .5em 0;
@@ -96,12 +96,12 @@
 .content { margin: 10px 0; }
 
 // Text assets
-.asset-type-text.asset-size-1, .asset-type-documentgroup.asset-size-1 {
-  .asset-title {
+.asset-type-text.asset-size-1 {
+  .asset-title, .asset-title p {
     font-size: 36px;
     text-align: center;
   }
-  .description, .body, p, li {
+  .description, .body, .description p, .body p, .description li, .body li,  {
     font-size: 18px;
     text-align: center;
   }
@@ -134,26 +134,22 @@ The Populr mobile reset will handle some of the basics of
 mobilizing your theme, such as stacking all of the assets 
 vertically. However, you'll have to fine tune the styling 
 to make your theme look really good on mobile devices. */
-@media all and (max-width: 960px) {
+@media screen and (max-width: 960px) {
   #populr > .mobile-reset();
 
-  #pop-title {
-    width: auto !important;
-    padding: 20px !important;
-  }
+  #pop-title { padding: 20px !important; }
 
   .columnizer-row {
-    width: auto !important;
     margin: 20px auto !important;
     padding: 0 20px !important;
   }
 
-  .asset-title {
+  .asset-title, .asset-title p {
     font-size: 24px !important;
     text-align: left !important;
   }
 
-  .description, .body, p, li {
+  .description, .body, .description p, .body p, .description li, .body li,  {
     font-size: 14px !important;
     text-align: left !important;
   }
@@ -162,6 +158,6 @@ to make your theme look really good on mobile devices. */
 @media screen and (max-width: 600px) {
   #pop-title { font-size: 32px !important; }
 
-  .asset-title { font-size: 20px !important; }
+  .asset-title, .asset-title p { font-size: 20px !important; }
 }
 
