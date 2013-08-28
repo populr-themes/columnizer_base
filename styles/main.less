@@ -11,15 +11,11 @@
 
 // Title text defaults
 // @headline-font-family is defined in variables.less
-@headline-font-size: 24px;
-@headline-line-height: 1.2;
-
 .headline-text() {
   font-family: @headline-font-family;
-  font-size: @headline-font-size;
-  line-height: @headline-line-height;
+  font-size: 24px;
+  line-height: 1.2;
 }
-
 .pop-title-text() {
   font-family: @headline-font-family;
   font-size: 54px;
@@ -28,13 +24,10 @@
 
 // Body text defaults
 @body-font-family: Arial, sans-serif;
-@body-font-size: 14px;
-@body-line-height: 1.5;
-
 .body-text() {
   font-family: @body-font-family;
-  font-size: @body-font-size;
-  line-height: @body-line-height;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* END TYPOGRAPHY DEFAULTS */
@@ -44,13 +37,13 @@
 
 #pop {
   margin: 0 auto;
+
   color: @text-color;
   i, em { font-style: italic; }
   b, strong { font-weight: 700; }
+
   a {
     color: @link-color;
-    text-decoration: none;
-    &:hover { text-decoration: underline; }
     &:active { color: lighten(@link-color, 20%); }
   }
 }
@@ -61,34 +54,30 @@
 // Pop title
 #pop-title {
   .pop-title-text();
-  p { .pop-title-text(); }
   text-align: center;
 }
 
 // Columnizer rows & columns
 .columnizer-row {
   max-width: 960px;
-  margin: 30px auto;
-  padding: 10px;
+  margin: 0 auto;
+}
+
+.columnizer-col {
+  background-color: #bbb;
 }
 
 // Assets
 .asset-title {
   .headline-text();
-  p { .headline-text(); }
-
   margin: 10px 0;
 }
 
 .description, .body {
   .body-text();
-  p, li { .body-text(); }
 
   margin: 10px 0;
-  ul, ol {
-    margin: .5em 0;
-    list-style-position: inside;
-  }
+  ul, ol { margin: .5em 0 .5em 1.5em; }
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
 }
@@ -97,11 +86,11 @@
 
 // Text assets
 .asset-type-text.asset-size-1 {
-  .asset-title, .asset-title p {
+  .asset-title {
     font-size: 36px;
     text-align: center;
   }
-  .description, .body, .description p, .body p, .description li, .body li,  {
+  .description, .body .description li, .body li,  {
     font-size: 18px;
     text-align: center;
   }
@@ -113,7 +102,8 @@
 // Document assets
 .documents {
   margin: 10px auto;
-  li { margin-bottom: .5em; }
+  li {
+    margin-bottom: .5em; }
 }
 
 // Clearfix
@@ -144,12 +134,12 @@ to make your theme look really good on mobile devices. */
     padding: 0 20px !important;
   }
 
-  .asset-title, .asset-title p {
+  .asset-title {
     font-size: 24px !important;
     text-align: left !important;
   }
 
-  .description, .body, .description p, .body p, .description li, .body li,  {
+  .description, .body, .description li, .body li, {
     font-size: 14px !important;
     text-align: left !important;
   }
@@ -158,6 +148,6 @@ to make your theme look really good on mobile devices. */
 @media screen and (max-width: 600px) {
   #pop-title { font-size: 32px !important; }
 
-  .asset-title, .asset-title p { font-size: 20px !important; }
+  .asset-title { font-size: 20px !important; }
 }
 
