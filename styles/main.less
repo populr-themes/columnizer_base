@@ -1,12 +1,24 @@
+/************************************************************************
+// For extensive details about creating a Populr theme, please visit
+// http://developers.populr.me/theming
+*/
+
+
+// You must import variables.less before importing populr_mixins.less
 @import 'variables';
 @import 'http://populr.me/assets/developers/populr_mixins.less';
 @import 'preboot';
 
+
+// Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
 
-/* TYPOGRAPHY DEFAULTS */
+
+/////////////////////////////////////////////////////////////////////////
+// Typography defaults
 
 @text-color: #111;
+// @custom-color is defined in variables.less
 @link-color: @custom-color;
 
 // Title text defaults
@@ -18,7 +30,7 @@
 }
 .pop-title-text() {
   font-family: @headline-font-family;
-  font-size: 54px;
+  font-size: 56px;
   line-height: 1.1;
 }
 
@@ -30,14 +42,8 @@
   line-height: 1.5;
 }
 
-/* END TYPOGRAPHY DEFAULTS */
-
-
-/* STRUCTURE */
-
 #pop {
-  margin: 0 auto;
-
+  font-family: @body-font-family;
   color: @text-color;
   i, em { font-style: italic; }
   b, strong { font-weight: 700; }
@@ -48,23 +54,32 @@
   }
 }
 
+// End typography defaults
+/////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////
+// Structure
+
 // Content wrapper
-#main-content { margin: 40px auto; }
+#main-content { margin: 0 auto; }
+
+// Logo helper
+#pop-logo { margin: 20px auto; }
 
 // Pop title
 #pop-title {
+  max-width: 960px;
+  padding: 0 20px;
+  margin: 50px auto;
+
   .pop-title-text();
   text-align: center;
 }
 
-// Columnizer rows & columns
-.columnizer-row {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 .columnizer-col {
   background-color: #bbb;
+  padding: 10px 20px;
 }
 
 // Assets
@@ -82,28 +97,29 @@
   ol li { list-style-type: decimal; }
 }
 
-.content { margin: 10px 0; }
-
-// Text assets
+// Text asset styling
 .asset-type-text.asset-size-1 {
   .asset-title {
     font-size: 36px;
     text-align: center;
   }
-  .description, .body .description li, .body li,  {
+  .description, .body, .description li, .body li,  {
     font-size: 18px;
     text-align: center;
   }
 }
 
-// Image assets
+// Image asset styling
 #populr > #image-slider-themes > .basic();
 
-// Document assets
+// Document asset styling
 .documents {
   margin: 10px auto;
-  li {
-    margin-bottom: .5em; }
+  li { 
+    margin-bottom: 1em;
+    a { text-decoration: none; }
+    a i.icon { font-style: normal !important; }
+  }
 }
 
 // Clearfix
@@ -111,43 +127,41 @@
   visibility: hidden;
   display: block;
   font-size: 0;
-  content: " ";
+  content: ' ';
   clear: both;
   height: 0;
 }
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
-///////////////////////////////////////////////////////
-/* MOBILE
-The Populr mobile reset will handle some of the basics of 
-mobilizing your theme, such as stacking all of the assets 
-vertically. However, you'll have to fine tune the styling 
-to make your theme look really good on mobile devices. */
+// End structure
+/////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////
+// Mobile
+//
+// The Populr mobile reset will handle some of the basics of mobilizing 
+// your theme, such as stacking all of the assets vertically and scaling 
+// them to 100% of the width of their container. However, you'll have to 
+// fine tune the styling to make your theme look really good on mobile
+// devices.
+
 @media screen and (max-width: 960px) {
   #populr > .mobile-reset();
 
-  #pop-title { padding: 20px !important; }
+  // Edit the grid for mobile
+  .columnizer-row-inner, #pop-title { max-width: 640px; }
+  .columnizer-col { margin: 0 10px 20px !important; }
 
-  .columnizer-row {
-    margin: 20px auto !important;
-    padding: 0 20px !important;
-  }
-
-  .asset-title {
-    font-size: 24px !important;
-    text-align: left !important;
-  }
-
-  .description, .body, .description li, .body li, {
-    font-size: 14px !important;
-    text-align: left !important;
-  }
+  // Edit the typography for mobile
+  #pop-title { font-size: 40px !important; }
+  .asset-title { font-size: 24px !important; }
+  .description, .body, .description li, .body li { font-size: 14px !important; }
+  .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
 }
 
 @media screen and (max-width: 600px) {
   #pop-title { font-size: 32px !important; }
-
   .asset-title { font-size: 20px !important; }
 }
-

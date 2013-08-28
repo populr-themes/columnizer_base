@@ -48,7 +48,7 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
 
-    {{logo}}
+    {{logo max_width=250 max_height=100}}
 
     {{{title}}}
 
@@ -71,19 +71,19 @@
 
       {{#asset "imagegroup" size="1"}}
         {{{title}}}
-        {{{imageslider images width="960" height="720"}}}
+        {{{imageslider images width="920" height="360"}}}
         {{{description}}}
       {{/asset}}
  
       {{#asset "imagegroup" size="2"}}
         {{{title}}}
-        {{{imageslider images width="470" height="353"}}}
+        {{{imageslider images width="430" height="353"}}}
         {{{description}}}
       {{/asset}}
   
       {{#asset "imagegroup" size="3"}}
         {{{title}}}
-        {{{imageslider images width="307" height="230"}}}
+        {{{imageslider images width="266" height="230"}}}
         {{{description}}}
       {{/asset}}
   
@@ -92,7 +92,8 @@
         {{{description}}}
         <ul class="documents">
           {{#documents}}
-            <li><a href="{{original_url}}">{{title}}</a></li>
+            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+            <li><a href="{{original_url}}"><i class="icon icon-circle-arrow-right" /> {{title}}</a></li>
           {{/documents}}
         </ul>
       {{/asset}}
@@ -102,7 +103,8 @@
         {{{description}}}
         <ul class="documents">
           {{#documents}}
-            <li><a href="{{original_url}}">{{title}}</a></li>
+            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+            <li><a href="{{original_url}}"><i class="icon icon-circle-arrow-right" /> {{title}}</a></li>
           {{/documents}}
         </ul>
       {{/asset}}
@@ -112,12 +114,13 @@
         {{{description}}}
         <ul class="documents">
           {{#documents}}
-            <li><a href="{{original_url}}">{{title}}</a></li>
+            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+            <li><a href="{{original_url}}"><i class="icon icon-circle-arrow-right" /> {{title}}</a></li>
           {{/documents}}
         </ul>
       {{/asset}}
  
-      {{#asset "embedgroup" size="1" width="960"}}
+      {{#asset "embedgroup" size="1" width="920"}}
         {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
@@ -125,7 +128,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="2" width="470"}}
+      {{#asset "embedgroup" size="2" width="430"}}
         {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
@@ -133,7 +136,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="3" width="307"}}
+      {{#asset "embedgroup" size="3" width="266"}}
         {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
